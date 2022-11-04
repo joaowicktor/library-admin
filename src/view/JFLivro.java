@@ -319,7 +319,7 @@ public class JFLivro extends javax.swing.JFrame {
     private void jBPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarActionPerformed
         // Ao clicar em pesquisar, é executado o método que efetua a pesquisa, e outro método que exibe a lista da pesquisa
         try {            
-            listaContatos(); 
+            listaLivros(); 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Problemas ao listar contatos.");            
         }
@@ -397,7 +397,7 @@ public class JFLivro extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(rootPane, "Dados cadastrados com sucesso.");
                     limpaCampos();
                     desabilitaCampos();
-
+                    listaLivros();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(rootPane, ex.getMessage());
                 }
@@ -431,7 +431,7 @@ public class JFLivro extends javax.swing.JFrame {
     List<Livro> livros;
     
     // Lista a quantidade de resultado, de acordo com o nome passado no campo pesquisa
-    private void listaContatos() throws SQLException {
+    private void listaLivros() throws SQLException {
         limpaCampos();
         BdLivro d = new BdLivro();
         livros = d.getLista("%" + jTPesquisar.getText() + "%"); 
@@ -505,6 +505,7 @@ public class JFLivro extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Registro excluido com sucesso.");
                 limpaCampos();
                 desabilitaCampos();
+                listaLivros();
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Registro não selecionado.");
@@ -541,7 +542,7 @@ public class JFLivro extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Registro alterado com sucesso.");
                 limpaCampos();
                 desabilitaCampos();
-                listaContatos();
+                listaLivros();
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Registro não selecionado.");

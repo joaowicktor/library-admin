@@ -439,7 +439,7 @@ public class JFCliente extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(rootPane, "Dados cadastrados com sucesso.");
                     limpaCampos();
                     desabilitaCampos();
-
+                    listaContatos();
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar cliente.");
                 }
@@ -548,6 +548,7 @@ public class JFCliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Registro excluido com sucesso.");
                 limpaCampos();
                 desabilitaCampos();
+                listaContatos();
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Registro não selecionado.");
