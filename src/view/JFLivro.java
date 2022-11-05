@@ -409,13 +409,27 @@ public class JFLivro extends javax.swing.JFrame {
     
     // Método p/ validação do formulário
     private boolean verificaDados() {
-        if ((!jT1Exemplar.getText().equals("")) && (!jT2Autor.getText().equals("")) 
-                && (!jT3Edicao.getText().equals("")) && (!jT4Ano.getText().equals(""))
-                && (!jT5Status.getText().equals(""))) {
-            return true;
+        if(jT1Exemplar.getText() == null || jT1Exemplar.getText().isEmpty() || jT1Exemplar.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O exemplar não pode ser vazio");
+            return false;
         }
-        JOptionPane.showMessageDialog(rootPane, "Dados imcompletos.");
-        return false;
+        if(jT2Autor.getText() == null || jT2Autor.getText().isEmpty() || jT2Autor.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O nome do autor não pode ser vazio");
+            return false;
+        }
+        if(jT3Edicao.getText() == null || jT3Edicao.getText().isEmpty() || jT3Edicao.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "A edição não pode ser vazia");
+            return false;
+        }
+        if(jT4Ano.getText() == null || jT4Ano.getText().isEmpty() || jT4Ano.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O ano não pode ser vazio");
+            return false;
+        }
+        if(jT5Status.getText() == null || jT5Status.getText().isEmpty() || jT5Status.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "O status não pode ser vazio");
+            return false;
+        }
+        return true;
     }
     
     /* <-CADASTRO---- */ 
