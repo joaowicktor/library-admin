@@ -134,5 +134,42 @@ public class BdCliente {
         stmt.close();
         
     }
+    
+    // SELECT - Busca CPF
+    public boolean buscaCPF(String cpf) throws SQLException {
+        // Prepara conexão p/ receber o comando SQL
+        String sql = "SELECT * FROM cliente WHERE cpf=?";
+        PreparedStatement stmt = this.conexao.prepareStatement(sql);
+        stmt.setString(1, cpf);
+        
+        // Recebe o resultado da consulta SQL
+        ResultSet rs = stmt.executeQuery();
+        
+        List<Cliente> lista;
+        lista = new ArrayList<>();
+        
+        // Enquanto existir registros, pega os valores do ReultSet e vai adicionando na lista
+        while(rs.next()) {
+            //  A cada loop, é instanciado um novo objeto, p/ servir de ponte no envio de registros p/ a lista
+            Cliente c = new Cliente();
+            
+            // "c" -> Cliente novo - .setNome recebe o campo do banco de String "nome" 
+            c.setId(Integer.parseInt(rs.getString("id_cliente")));
+            c.setNome(rs.getString("nome"));
+            c.setDataNasc(rs.getString("data_nasc"));
+            c.setSexo(rs.getString("sexo"));
+            c.setCpf(rs.getString("cpf"));
+            c.setEndereco(rs.getString("endereco"));
+            c.setFone(rs.getString("fone"));
+            
+            // Adiciona o registro na lista
+            lista.add(c);            
+        }
+        
+        rs.close();
+        stmt.close();
+                
+        return !lista.isEmpty();
+    }
     /* <-CLIENTE---- */
 }

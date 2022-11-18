@@ -457,7 +457,6 @@ public class JFCliente extends javax.swing.JFrame {
                     tempcpf = tempcpf.replaceAll("\\-", "");
                     String tempfone = jT6Fone.getText();
                     tempfone = tempfone.replaceAll("\\-", "");
-                    System.out.println(tempcpf);
                     c.setNome(jT1Nome.getText());
                     c.setDataNasc(data());
                     c.setSexo(jT3Sexo.getText());
@@ -466,13 +465,16 @@ public class JFCliente extends javax.swing.JFrame {
                     c.setFone(tempfone);
 
                     BdCliente d = new BdCliente();
-
-                    d.adicionaCliente(c);
-
-                    JOptionPane.showMessageDialog(rootPane, "Dados cadastrados com sucesso.");
-                    limpaCampos();
-                    desabilitaCampos();
-                    listaContatos();
+                    
+                    if(d.buscaCPF(tempcpf)) {
+                        JOptionPane.showMessageDialog(rootPane, "Este CPF já está cadastrado.");
+                    } else {
+                        d.adicionaCliente(c);
+                        JOptionPane.showMessageDialog(rootPane, "Dados cadastrados com sucesso.");
+                        limpaCampos();
+                        desabilitaCampos();
+                        listaContatos();
+                    }
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(rootPane, "Erro ao cadastrar cliente.");
                 }
