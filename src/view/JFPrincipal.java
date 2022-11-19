@@ -37,6 +37,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMEmprestimo = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMMulta = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,6 +92,14 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMMulta);
 
         jMenuBar1.add(jMenu7);
+
+        jMenu1.setText("Ajuda");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMAjudaActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
 
         jMenu4.setText("Sair");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,6 +180,10 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMMultaActionPerformed
 
+    private void jMAjudaActionPerformed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMAjudaActionPerformed
+        new JFAjuda().setVisible(true);
+    }//GEN-LAST:event_jMAjudaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,6 +211,8 @@ public class JFPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -213,6 +228,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMEmprestimo;
     private javax.swing.JMenuItem jMLivro;
     private javax.swing.JMenuItem jMMulta;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
