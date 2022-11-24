@@ -37,6 +37,8 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMEmprestimo = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMMulta = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
@@ -92,6 +94,28 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMMulta);
 
         jMenuBar1.add(jMenu7);
+
+        jMenu5.setText("Relatórios");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
+
+        jMenuItem1.setText("Empréstimos por cliente");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu1.setText("Ajuda");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,6 +208,18 @@ public class JFPrincipal extends javax.swing.JFrame {
         new JFAjuda().setVisible(true);
     }//GEN-LAST:event_jMAjudaActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new JFRelatorioEmprestimoPorCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -232,8 +268,10 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

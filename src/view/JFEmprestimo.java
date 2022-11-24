@@ -320,6 +320,11 @@ public class JFEmprestimo extends javax.swing.JFrame {
                 jBDevolverMouseClicked(evt);
             }
         });
+        jBDevolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBDevolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -528,6 +533,10 @@ public class JFEmprestimo extends javax.swing.JFrame {
     private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
         this.dispose();
     }//GEN-LAST:event_jBSairActionPerformed
+
+    private void jBDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDevolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBDevolverActionPerformed
     
     
     
@@ -594,7 +603,7 @@ public class JFEmprestimo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "A data de emprestimo não pode ser vazia.");
             return false;
         }
-        return false;
+        return true;
     }
     
     // Pega o campo disponibilidade do livro selecionado
@@ -929,7 +938,7 @@ public class JFEmprestimo extends javax.swing.JFrame {
             int id = (int) jTableEmprestimo.getValueAt(linhaSelecionada, 0);
             // Remove o registro, usando como parâmetro, o id da linha selecionada                
             BdEmprestimo d = new BdEmprestimo();
-            d.remove(id);         
+            d.devolve(id);         
             
             if (diferencaData() > 0) {
                 passaValor(String.valueOf(diferencaData()));

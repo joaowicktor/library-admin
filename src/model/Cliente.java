@@ -10,7 +10,7 @@ package model;
  * @author paulojp
  */
 public class Cliente {
-    
+
     private int id;
     private String nome;
     private String dataNasc;
@@ -28,8 +28,18 @@ public class Cliente {
         this.fone = fone;
     }
     
-     public Cliente() {
-    }  
+    public Cliente(int id, String nome, String dataNasc, String sexo, String cpf, String endereco, String fone) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNasc = dataNasc;
+        this.sexo = sexo;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.fone = fone;
+    }
+
+    public Cliente() {
+    }
 
     public int getId() {
         return id;
@@ -37,8 +47,8 @@ public class Cliente {
 
     public void setId(int id) {
         this.id = id;
-    }    
-    
+    }
+
     public String getNome() {
         return nome;
     }
@@ -85,6 +95,6 @@ public class Cliente {
 
     public void setFone(String fone) {
         this.fone = fone;
-    }  
-    
+    }
+
 }
