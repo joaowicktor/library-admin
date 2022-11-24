@@ -28,6 +28,10 @@ public class BdCliente {
         System.out.println("Conectado ao banco de dados.");
     }
 
+    public BdCliente(Connection conexao) {
+        this.conexao = conexao;
+    }
+
     /* <-CONEXÃO COM O BD---- */
 
  /* ----CLIENTE-> */
