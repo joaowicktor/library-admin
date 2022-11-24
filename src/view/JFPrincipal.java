@@ -162,12 +162,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMLivroActionPerformed
-        
-        // Abre a janela
-        new JFLivro(this).setVisible(true);
-        
-        this.setEnabled(false);
-        
+        new JFLivro().setVisible(true);
     }//GEN-LAST:event_jMLivroActionPerformed
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
@@ -175,14 +170,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu4MouseClicked
 
     private void jMClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMClienteActionPerformed
-        
-       // Abre a janela
-       // this(Esta janela) - Passa a instancia da tela atual como parâmetro p/ o contrutor
-       new JFCliente(this).setVisible(true);
-       
-       // Desativa funcionalidades da tabela principal
-       this.setEnabled(false);
-        
+        new JFCliente().setVisible(true);
     }//GEN-LAST:event_jMClienteActionPerformed
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
@@ -190,18 +178,11 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     private void jMEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEmprestimoActionPerformed
-        
-        // Abre a janela
-        new JFEmprestimo(this).setVisible(true);
-        
-        this.setEnabled(false);
-        
+        new JFEmprestimo().setVisible(true);
     }//GEN-LAST:event_jMEmprestimoActionPerformed
 
     private void jMMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMMultaActionPerformed
-        
         new JFMulta().setVisible(true);
-        
     }//GEN-LAST:event_jMMultaActionPerformed
 
     private void jMAjudaActionPerformed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMAjudaActionPerformed

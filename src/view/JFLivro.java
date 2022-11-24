@@ -75,11 +75,6 @@ public class JFLivro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livros");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosed(java.awt.event.WindowEvent evt) {
-                formWindowClosed(evt);
-            }
-        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados Livros"));
 
@@ -358,12 +353,6 @@ public class JFLivro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Erro ao alterar registro.");
         }
     }//GEN-LAST:event_jBAlterarActionPerformed
-
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        
-        telaPrincipal.setEnabled(true);
-        
-    }//GEN-LAST:event_formWindowClosed
 
     private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
         this.dispose();
